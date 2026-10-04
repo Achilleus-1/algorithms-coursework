@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <stdint.h>
+#include <limits.h>
 
 
 
@@ -19,31 +21,20 @@ unsigned long gcd(unsigned long a, unsigned long b)
 
 unsigned long modInverse(unsigned long a, unsigned long m)
 {
-    unsigned long m0 = m, t, q;
-
-     unsigned long x0 = 0, x1 = 1;
-
-    if (m == 1)
-        return 0;
-
-    while (a > 1)
-    {
-         q = a / m;
-         t = m;
-         m = a % m;
-         a = t;
-         t = x0;
-         x0 = x1 - q * x0;
-          x1 = t;
+    /* This small coursework implementation supports moduli up to INT_MAX. */
+    if (m <= 1 || m > INT_MAX) return 0;
+    int64_t modulus = (int64_t)m, old_r = modulus, r = (int64_t)(a % m);
+    int64_t old_t = 0, t = 1;
+    while (r != 0) {
+        int64_t quotient = old_r / r;
+        int64_t remainder = old_r - quotient * r;
+        int64_t coefficient = old_t - quotient * t;
+        old_r = r; r = remainder;
+        old_t = t; t = coefficient;
     }
-
-    if (x1 < 0)
-        x1 += m0;
-
-    return x1;
+    if (old_r != 1) return 0;
+    return (unsigned long)((old_t % modulus + modulus) % modulus);
 }
-
-
 
 // Function to generate keys for RSA encryption
 void generateKeys(unsigned long p, unsigned long q, unsigned long *n, unsigned long *e, unsigned long *d)

@@ -4,11 +4,11 @@ Computational geometry, geographic nearest-neighbor selection, dynamic programmi
 
 ## Original coursework
 
-- CS 3343-004 — Design and Analysis of Algorithms, Spring 2025
-- CS 2233-003 — Discrete Mathematical Structures, Spring 2024
-- CS 3333-005 — Mathematical Foundations of Computer Science, Fall 2024
+- Design and Analysis of Algorithms
+- Discrete Mathematical Structures
+- Mathematical Foundations of Computer Science
 
-Originally completed at the University of Texas at San Antonio during the terms above and imported to GitHub later. This repository preserves the submitted implementation; repository documentation and import housekeeping were added separately.
+Originally completed at the University of Texas at San Antonio and imported to GitHub later. This repository retains the coursework implementation with documented maintenance fixes and demonstration assets.
 
 **Languages and technologies:** Python, NumPy, Matplotlib, Java, C, Bash.
 
@@ -43,3 +43,9 @@ Run Python programs from their own directories so relative input paths resolve. 
 - RSA programs are small educational demonstrations, not production cryptography.
 
 Only source code, build configuration, and required text inputs are included. Written submissions, assignment instructions, PDFs, videos, generated outputs, binary builds, and private configuration are omitted. Anonymized contributor labels and supplied-code comments retain the distinction between submitted work and scaffolding. No license for course-provided material is inferred.
+
+## Development and reuse
+
+See [DEVELOPMENT.md](DEVELOPMENT.md) for reproducible checks and known archival dependencies, [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidance, and [SECURITY.md](SECURITY.md) for private reports.
+
+Reuse terms and provenance are documented in [NOTICE.md](NOTICE.md) and [LICENSE](LICENSE). The maintenance license does not grant rights to original course or team material.

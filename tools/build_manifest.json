@@ -1,0 +1,17 @@
+[
+  {
+    "compiler": "javac",
+    "sources": [
+      "rsa/java/RSA.java"
+    ]
+  },
+  {
+    "compiler": "gcc",
+    "sources": [
+      "rsa/c/rsa.c"
+    ],
+    "flags": [
+      "-lm"
+    ]
+  }
+]
